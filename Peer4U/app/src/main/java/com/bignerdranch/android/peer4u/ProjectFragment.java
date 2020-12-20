@@ -86,13 +86,34 @@ public class ProjectFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_project, container, false);
 
         mPhotoView = (ImageView) v.findViewById(R.id.student_profilepic);
+        mPhotoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = SetupActivity.newIntent(getActivity(), mStudent.getId());
+                startActivity(intent);
+            }
+        });
         updatePhotoView();
 
         mStudentNameField = (TextView) v.findViewById(R.id.student_name);
         mStudentNameField.setText(mStudent.getFirstName());
+        mStudentNameField.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = SetupActivity.newIntent(getActivity(), mStudent.getId());
+                startActivity(intent);
+            }
+        });
 
         mStudentUniversityField = (TextView) v.findViewById(R.id.student_university);
         mStudentUniversityField.setText(mStudent.getUniveristy());
+        mStudentUniversityField.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = SetupActivity.newIntent(getActivity(), mStudent.getId());
+                startActivity(intent);
+            }
+        });
 
         mProjectNameField = (TextView) v.findViewById(R.id.project_name);
         mProjectNameField.setText(mProject.getAssignmentName());

@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
@@ -21,6 +22,7 @@ public class NewSubjectFragment extends DialogFragment {
     private EditText mSubjectName;
     private EditText mSubjectCode;
     private Subject mSubject;
+    private static final String ARG_SUBJECT_ID = "subject";
 
     public static NewSubjectFragment newInstance(){
         Bundle args = new Bundle();
@@ -29,16 +31,29 @@ public class NewSubjectFragment extends DialogFragment {
         fragment.setArguments(args);
         return fragment;
     }
+    public static NewSubjectFragment newInstance(UUID subjectId){
+        Bundle args = new Bundle();
+        args.putSerializable(ARG_SUBJECT_ID, subjectId);
+        NewSubjectFragment fragment = new NewSubjectFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
-        mSubject = new Subject();
-        SubjectLab.get(getActivity()).addSubject(mSubject);
+        UUID subjectId = (UUID) getArguments().getSerializable(ARG_SUBJECT_ID);
+        if (subjectId == null){
+            mSubject = new Subject();
+            SubjectLab.get(getActivity()).addSubject(mSubject);
+        } else {
+            mSubject = SubjectLab.get(getActivity()).getSubject(subjectId);
+        }
 
         View v = LayoutInflater.from(getActivity())
                 .inflate(R.layout.dialog_newsubject, null);
 
         mSubjectCode = (EditText) v.findViewById(R.id.subject_code);
+        mSubjectCode.setText(mSubject.getSubjectCode());
 
         mSubjectCode.addTextChangedListener(new TextWatcher() {
             @Override
@@ -61,6 +76,7 @@ public class NewSubjectFragment extends DialogFragment {
         });
 
         mSubjectName = (EditText) v.findViewById(R.id.subject_name);
+        mSubjectName.setText(mSubject.getSubjectName());
 
         mSubjectName.addTextChangedListener(new TextWatcher() {
             @Override

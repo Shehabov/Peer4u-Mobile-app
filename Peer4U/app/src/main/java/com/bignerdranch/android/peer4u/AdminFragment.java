@@ -34,7 +34,7 @@ public class AdminFragment extends Fragment {
     private ImageView mNoSubjectsEnrolledImageView;
     private boolean mSubtitleVisible;
     private static final String SAVED_SUBTITLE_VISIBLE = "subtitle";
-    private static final String DIALOG_SUBJECT = "DialogProject";
+    private static final String DIALOG_SUBJECT = "DialogSubject";
     private static final int REQUEST_SUBJECT = 0;
 
     public static SubjectListFragment newInstance(){
@@ -68,6 +68,12 @@ public class AdminFragment extends Fragment {
                 FragmentManager manager = getFragmentManager();
                 NewSubjectFragment dialog = NewSubjectFragment.newInstance();
                 dialog.setTargetFragment(AdminFragment.this, REQUEST_SUBJECT);
+                dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                                                @Override
+                                                public void onDismiss(DialogInterface dialog) {
+                                                    updateUI();
+                                                }
+                                            });
                 dialog.show(manager, DIALOG_SUBJECT);
             }
         });
@@ -75,7 +81,7 @@ public class AdminFragment extends Fragment {
         mNoSubjectsEnrolledImageView = (ImageView) view.findViewById(R.id.no_subjects_enrolled_imageview);
 
         mEnrolledSubjectsText = (TextView) view.findViewById(R.id.enrolled_subjects_title);
-
+        mEnrolledSubjectsText.setText(R.string.available_subjects_title);
         if (savedInstanceState != null){
             mSubtitleVisible = savedInstanceState.getBoolean(SAVED_SUBTITLE_VISIBLE);
         }

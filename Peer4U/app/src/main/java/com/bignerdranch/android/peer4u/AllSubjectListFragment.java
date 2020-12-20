@@ -118,10 +118,10 @@ public class AllSubjectListFragment extends Fragment {
                 SubjectLab subjectLab = SubjectLab.get(getActivity());
                 studentLab.addSubject(mStudent, subjectLab.getSubject(password));
                 //StudentLab.get(getActivity()).updateStudent(mStudent);
-                Toast.makeText(getActivity(),"Enrol success!"+" message="+ password+ ", code="+ correctpassword, Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(),"Enrol success!", Toast.LENGTH_LONG).show();
 
             } else {
-                Toast.makeText(getActivity(),"message="+ password+ ", code="+ correctpassword, Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(),"Password is incorrect! Please check with your lecturer!", Toast.LENGTH_LONG).show();
             }
 
 

@@ -100,11 +100,32 @@ public class SubjectListFragment extends Fragment {
 
         mStudentNameText = (TextView) view.findViewById(R.id.student_name);
         mStudentNameText.setText(mStudent.getFirstName());
+        mStudentNameText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = SetupActivity.newIntent(getActivity(), mStudent.getId());
+                startActivity(intent);
+            }
+        });
 
         mStudentUniversityText = (TextView) view.findViewById(R.id.student_university);
         mStudentUniversityText.setText(mStudent.getUniveristy());
+        mStudentUniversityText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = SetupActivity.newIntent(getActivity(), mStudent.getId());
+                startActivity(intent);
+            }
+        });
 
         mPhotoView = (ImageView) view.findViewById(R.id.profile_photo);
+        mPhotoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = SetupActivity.newIntent(getActivity(), mStudent.getId());
+                startActivity(intent);
+            }
+        });
         updatePhotoView();
 
         if (savedInstanceState != null){

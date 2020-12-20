@@ -31,6 +31,8 @@ public class SubjectFragment extends Fragment {
     private Subject mSubject;
     private static final String DIALOG_PROJECT = "DialogProject";
     private static final int REQUEST_PROJECT = 0;
+    private static final String DIALOG_SUBJECT = "DialogSubject";
+    private static final int REQUEST_SUBJECT = 1;
     private TextView mSubjectNameText;
     private ImageView mPhotoView;
     private boolean mSubtitleVisible;
@@ -67,6 +69,21 @@ public class SubjectFragment extends Fragment {
 
         mSubjectNameText = (TextView) view.findViewById(R.id.subject_name);
         mSubjectNameText.setText(mSubject.getSubjectName());
+        mSubjectNameText.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                FragmentManager manager = getFragmentManager();
+                NewSubjectFragment dialog = NewSubjectFragment.newInstance(mSubject.getId());
+                dialog.setTargetFragment(SubjectFragment.this, REQUEST_SUBJECT);
+                dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                    @Override
+                    public void onDismiss(DialogInterface dialog) {
+                        mSubjectNameText.setText(mSubject.getSubjectName());
+                        updateUI();
+                    }
+                });
+                dialog.show(manager, DIALOG_SUBJECT);
+            }
+        });
 
         if (savedInstanceState != null){
             mSubtitleVisible = savedInstanceState.getBoolean(SAVED_SUBTITLE_VISIBLE);
@@ -145,6 +162,7 @@ public class SubjectFragment extends Fragment {
 
 
     private void updateUI(){
+
         SubjectLab subjectLab = SubjectLab.get(getActivity());
         List<Project> projects = subjectLab.getProjectsFromSubject(mSubject.getId());
 
@@ -179,7 +197,16 @@ public class SubjectFragment extends Fragment {
         }
         @Override
         public void onClick(View view){
-
+            FragmentManager manager = getFragmentManager();
+            NewProjectFragment dialog = NewProjectFragment.newInstance(mProject.getId());
+            dialog.setTargetFragment(SubjectFragment.this, REQUEST_PROJECT);
+            dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                @Override
+                public void onDismiss(DialogInterface dialog) {
+                    updateUI();
+                }
+            });
+            dialog.show(manager, DIALOG_PROJECT);
         }
     }
 

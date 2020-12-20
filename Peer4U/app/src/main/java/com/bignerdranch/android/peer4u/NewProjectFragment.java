@@ -50,6 +50,7 @@ public class NewProjectFragment extends DialogFragment {
                 .inflate(R.layout.dialog_newproject, null);
 
         mAssignmentDetails = (EditText) v.findViewById(R.id.project_details);
+        mAssignmentDetails.setText(mProject.getAssignmentDetails());
 
         mAssignmentDetails.addTextChangedListener(new TextWatcher() {
             @Override
@@ -72,6 +73,7 @@ public class NewProjectFragment extends DialogFragment {
         });
 
         mAssignmentName = (EditText) v.findViewById(R.id.project_name);
+        mAssignmentName.setText(mProject.getAssignmentName());
 
         mAssignmentName.addTextChangedListener(new TextWatcher() {
             @Override
