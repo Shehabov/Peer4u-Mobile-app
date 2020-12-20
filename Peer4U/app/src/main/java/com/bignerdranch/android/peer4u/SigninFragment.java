@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -34,44 +35,60 @@ public class SigninFragment extends Fragment {
         mGoogleIconSignInButton = (ImageButton) v.findViewById(R.id.google_icon);
         mGoogleIconSignInButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                //getting student specified by mStudentIndex
-                Student student = StudentLab.get(getActivity()).getStudents().get(mStudentIndex);
-                Intent intent = SetupActivity.newIntent(getActivity(), student.getId());
-                //startActivity(intent);
-                startActivity(intent);
+                //checking if there is any student in the database
+                if(StudentLab.get(getActivity()).getStudents().size()==0){
+                    Toast.makeText(getActivity(), "Please sign up first!", Toast.LENGTH_LONG).show();
+                } else {
+                    //getting student specified by mStudentIndex=0
+                    Student student = StudentLab.get(getActivity()).getStudents().get(mStudentIndex);
+                    Intent intent = SubjectListActivity.newIntent(getActivity(), student.getId());
+                    startActivity(intent);
+                }
             }
         });
 
         mGoogleSignInButton = (Button) v.findViewById(R.id.google_signin);
         mGoogleSignInButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                //getting student specified by mStudentIndex
-                Student student = StudentLab.get(getActivity()).getStudents().get(mStudentIndex);
-                Intent intent = SubjectListActivity.newIntent(getActivity(), student.getId());
-                //startActivity(intent);
-                startActivity(intent);
+                //checking if there is any student in the database
+                if(StudentLab.get(getActivity()).getStudents().size()==0){
+                    Toast.makeText(getActivity(), "Please sign up first!", Toast.LENGTH_LONG).show();
+                } else {
+                    //getting student specified by mStudentIndex=0
+                    Student student = StudentLab.get(getActivity()).getStudents().get(mStudentIndex);
+                    Intent intent = SubjectListActivity.newIntent(getActivity(), student.getId());
+                    startActivity(intent);
+                }
             }
         });
 
         mMicrosoftIconSignInButton = (ImageButton) v.findViewById(R.id.microsoft_icon);
         mMicrosoftIconSignInButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                //getting student specified by mStudentIndex
-                Student student = StudentLab.get(getActivity()).getStudents().get(mStudentIndex);
-                Intent intent = SubjectListActivity.newIntent(getActivity(), student.getId());
-                //startActivity(intent);
-                startActivity(intent);
+                //checking if there is any student in the database
+                if(StudentLab.get(getActivity()).getStudents().size()==0){
+                    Toast.makeText(getActivity(), "Please sign up first!", Toast.LENGTH_LONG).show();
+                } else {
+                    //getting student specified by mStudentIndex=0
+                    Student student = StudentLab.get(getActivity()).getStudents().get(mStudentIndex);
+                    Intent intent = SubjectListActivity.newIntent(getActivity(), student.getId());
+                    startActivity(intent);
+                }
             }
         });
 
         mMicrosoftSignInButton = (Button) v.findViewById(R.id.microsoft_signin);
         mMicrosoftSignInButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                //getting student specified by mStudentIndex
-                Student student = StudentLab.get(getActivity()).getStudents().get(mStudentIndex);
-                Intent intent = SubjectListActivity.newIntent(getActivity(), student.getId());
-                //startActivity(intent);
-                startActivity(intent);
+                //checking if there is any student in the database
+                if(StudentLab.get(getActivity()).getStudents().size()==0){
+                    Toast.makeText(getActivity(), "Please sign up first!", Toast.LENGTH_LONG).show();
+                } else {
+                    //getting student specified by mStudentIndex=0
+                    Student student = StudentLab.get(getActivity()).getStudents().get(mStudentIndex);
+                    Intent intent = SubjectListActivity.newIntent(getActivity(), student.getId());
+                    startActivity(intent);
+                }
             }
         });
 
