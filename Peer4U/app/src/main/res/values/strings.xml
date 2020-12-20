@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">Peer4U</string>
+    <string name="sign_up">Sign up</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_in_label">have an account?</string>
+    <string name="sign_up_label">don\'t have an account?</string>
+    <string name="date_picker_title">Date of episode:</string>
+
+    <string name="new_subject">Add subject</string>
+    <string name="new_project">Add project</string>
+    <string name="show_subtitle">Show Subtitle</string>
+    <string name="hide_subtitle">Hide Subtitle</string>
+    <string name="subtitle_format">%1$d projects</string>
+    <string name="subtitle_format_subject">%1$d subjects</string>
+    <string name="microsoft_signup">Sign up with Microsoft</string>
+    <string name="google_signup">Sign up with Google</string>
+    <string name="microsoft_signin">Sign in with Microsoft</string>
+    <string name="google_signin">Sign in with Google</string>
+
+    <string name="new_project_title">New Project</string>
+
+    <string name="done">Done</string>
+    <string name="enrol">Enrol</string>
+    <string name="send">Send</string>
+
+    <string name="subject_code_name_text">%1$s %2$s</string>
+
+
+    <string name="dialog_profilepic_title">Set Picture from: </string>
+    <string-array name="setprofilepic">
+    <item name="dialog_camera">Camera</item>
+    <item name="dialog_gallery">Gallery</item>
+    </string-array>
+
+    <string name="cancel">Cancel </string>
+
+    <string name="setup_name_hint">Firstname</string>
+    <string name="setup_university_hint">University</string>
+    <string name="setup_information_hint">Skills (e.g. Mobile dev..</string>
+    <string name="group_members">Group Members</string>
+    <string name="no_group">Not enrolled yet!</string>
+
+    <string name="no_group_members">1. %1$s leader \n You have no other members yet!</string>
+    <string name="group_members_names">1. %1$s leader \n%2$s</string>
+
+    <string name="request">Request</string>
+    <string name="send_message">Send message</string>
+    <string name="admin">Admin</string>
+
+    <string name="create_group_button">Create Group</string>
+    <string name="join_group_button">Join Group</string>
+    <string name="invite_members_button">Invite members</string>
+    <string name="leave_group_button">Leave Group</string>
+    <string name="leave_group_title">Are you sure you want to leave the following group?</string>
+
+    <string name="group_name_hint">i.e. Marketers</string>
+    <string name="group_name_text">Group name:</string>
+    <string name="group_leader_text">Group leader:</string>
+    <string name="project_name_text">Assignment Name:</string>
+
+    <string name="search_for_students_title">Search for students</string>
+    <string name="available_groups_title">Available Groups</string>
+    <string name="enrolled_subjects_title">Enrolled Subjects</string>
+    <string name="available_subjects_title">Available Subjects</string>
+
+    <string name="invite_button">Invite</string>
+    <string name="request_button">Request</string>
+
+    <string name="no_group_text">No group has registered yet!</string>
+
+    <string name="dialog_description_invite">Send invitation message:</string>
+    <string name="dialog_description_request">Send request to join group:</string>
+    <string name="dialog_description_password">Enter password from lecturer:</string>
+</resources>

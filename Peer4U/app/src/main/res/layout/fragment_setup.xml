@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp">
+
+
+
+    <ImageView
+        android:id="@+id/profile_photo"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/default_profile_photo"
+        android:cropToPadding="true"
+        android:scaleType="centerInside"/>
+    <ImageButton
+        android:id="@+id/setup_profilepic_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_camera" />
+    <EditText
+        android:id="@+id/setup_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/setup_name_hint" />
+
+    <EditText
+        android:id="@+id/setup_university"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/setup_university_hint" />
+
+    <EditText
+        android:id="@+id/setup_introduction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/setup_information_hint"
+        android:ems="10"
+        android:inputType="textMultiLine"/>
+
+
+    <Button
+        android:id="@+id/setup_done_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/done"/>
+</LinearLayout>

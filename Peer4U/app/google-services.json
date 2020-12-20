@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "746416701258",
+    "firebase_url": "https://peer4u.firebaseio.com",
+    "project_id": "peer4u",
+    "storage_bucket": "peer4u.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:746416701258:android:3f9c39a2fc16fa41a18bb3",
+        "android_client_info": {
+          "package_name": "com.bignerdranch.android.peer4u"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "746416701258-mmlulgi7287e7adcjd00716njdddg092.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bignerdranch.android.peer4u",
+            "certificate_hash": "985ce7c579ef990b11f271fe0e08f0d87bef0555"
+          }
+        },
+        {
+          "client_id": "746416701258-b2u4lakoql26anoueo3n36ooi5de5mao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7a4qQyNlVO7Wl9FEZ37lFgcmZzDtQkhU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "746416701258-b2u4lakoql26anoueo3n36ooi5de5mao.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
