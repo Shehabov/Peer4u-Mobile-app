@@ -1,5 +1,5 @@
 # Peer4U
-Developing a students' grouping app to connect the students and allow easier member searching and group formation. 
+Peer4U is a students' grouping app to connect the students and allow easier member searching and group formation. 
 
 ## Development Environment:
 - Adobe XD
